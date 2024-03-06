@@ -1,14 +1,17 @@
----
-layout: home
-title: linshuanyong's homepage
-description: Site in memory of Mr. Lin, Shuanyong.
-permalink: /
----
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蔺栓永的主页</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>这是蔺栓永的主页。更新中</p>
+    <h1>Welcome to My Blog</h1>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%b %d, %Y" }}
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
